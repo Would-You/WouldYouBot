@@ -19,8 +19,9 @@ from aiohttp import ClientSession
 from discord.ext import commands
 
 import config
+import motor.motor_asyncio
 
-bot = commands.Bot(
+bot = commands.AutoShardedBot(
     command_prefix=commands.when_mentioned_or(*config.prefix),
     owner_id=config.owner_id,
     activity=discord.Game(name=f"{config.prefix[0]} help"),
@@ -48,6 +49,8 @@ async def create_session():
             "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0"
         }
     )
+    client = motor.motor_asyncio.AsyncIOMotorClient()
+    bot.db = client.wouldyou
 
 
 if __name__ == "__main__":
