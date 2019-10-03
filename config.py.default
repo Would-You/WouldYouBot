@@ -1,0 +1,8 @@
+# Discord bot token, obtain one at https://discordapp.com/developers/applications
+token = ""
+# A list of global bot prefixes
+prefix = ["w "]
+# Discord snowflake of the bot owner ID
+owner_id = 244508568517083136
+# Initial bot components, loaded on startup
+modules = ["jishaku"]
