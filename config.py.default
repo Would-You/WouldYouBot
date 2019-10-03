@@ -5,4 +5,4 @@ prefix = ["w "]
 # Discord snowflake of the bot owner ID
 owner_id = 244508568517083136
 # Initial bot components, loaded on startup
-modules = ["jishaku"]
+modules = ["jishaku", "modules.help"]
